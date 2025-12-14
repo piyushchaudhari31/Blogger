@@ -2,38 +2,41 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
-  padding: 3rem 3rem;
+  padding: 1.5rem 2rem;
   position: sticky;
   top: 0;
   background-color: #fff;
   z-index: 999;
+  border-bottom: 1px solid #eee;
 }
 
-.navbar .title img{
+.navbar .title img {
   width: 150px;
-}
-.navbar .navbar-button img {
-  width: 20px;
+  cursor: pointer;
 }
 
 .navbar-button {
-  width: 160px;
   display: flex;
   align-items: center;
-  padding: 0.2rem 1rem;
+  gap: 8px;
+  padding: 0.4rem 1rem;
   border: 1px solid black;
   cursor: pointer;
-  box-shadow: -10px 10px 0 black;
+  box-shadow: -6px 6px 0 black;
+  background: white;
+}
+
+.navbar-button img {
+  width: 18px;
 }
 
 .navbar-button button {
-  padding: 0.5rem;
   font-size: 1rem;
   border: none;
   background: none;
   cursor: pointer;
 }
+
 .profile-section {
   position: relative;
 }
@@ -43,7 +46,7 @@
   height: 45px;
   border-radius: 50%;
   cursor: pointer;
-  transition: 0.2s;
+  transition: transform 0.2s ease;
 }
 
 .profile-img:hover {
@@ -55,21 +58,20 @@
   right: 0;
   top: 60px;
   background: #fff;
-  padding: 0.7rem 0;
-  width: 140px;
+  width: 150px;
+  padding: 0.5rem 0;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   z-index: 999;
-  animation: fadeIn 0.25s ease-out;
   border: 1px solid #e5e5e5;
+  animation: fadeIn 0.25s ease-out;
 }
 
 .new-menu p {
   padding: 0.7rem 1rem;
-  cursor: pointer;
   font-size: 0.95rem;
+  cursor: pointer;
   transition: 0.2s;
-  border-radius: 6px;
 }
 
 .new-menu p:hover {
@@ -80,7 +82,9 @@
 .logout {
   color: red;
   font-weight: 600;
+  cursor: pointer;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -92,27 +96,25 @@
   }
 }
 
-.logout {
-  color: red;
-  cursor: pointer;
-}
-
-
-@media(max-width:900px){
-  .navbar .title img{
-    width: 120px;
-  }
-  .profile-section img{
-    width: 40px;
-  }
-  .navbar-button{
-    width: 100px;
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0.8rem 1rem;
   }
 
-  .navbar-button button{
+  .navbar .title img {
+    width: 110px;
+  }
+
+  .navbar-button {
+    padding: 0.3rem 0.6rem;
+  }
+
+  .navbar-button button {
     font-size: 12px;
   }
 
-  
-  
+  .profile-img {
+    width: 40px;
+    height: 40px;
+  }
 }

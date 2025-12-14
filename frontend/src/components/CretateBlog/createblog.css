@@ -1,16 +1,18 @@
+/* PAGE FIX */
 .createBlogPage {
+  width: 100%;
+  min-height: calc(100vh - 80px); 
+  padding: 2rem 1rem 4rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 2rem;
+  align-items: flex-start; 
 }
 
-/* CARD UI */
 .create-container {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   background: #fff;
-  padding: 2rem 2.2rem;
+  padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 6px 25px rgba(0,0,0,0.08);
   display: flex;
@@ -19,13 +21,11 @@
 }
 
 .create-container h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
   text-align: center;
   font-weight: 600;
 }
 
-/* FORM GROUP */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -38,7 +38,6 @@
   color: #333;
 }
 
-/* Inputs */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -47,8 +46,12 @@
   border: 1px solid #ccc;
   font-size: 0.95rem;
   outline: none;
-  transition: 0.2s;
   background: #fafafa;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 180px;
 }
 
 .form-group input:focus,
@@ -58,44 +61,9 @@
   background: #fff;
 }
 
-/* Image Preview */
-.preview-img {
-  width: 120px;
-  height: 120px;
-  margin-top: 8px;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-}
-
-/* Submit Button */
-.create-btn {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  border-radius: 10px;
-  background: #000;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 5px;
-  transition: 0.2s;
-}
-
-.create-btn:hover {
-  transform: translateY(-2px);
-  background: #333;
-}
-
 .ai-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 1rem;
-  width: 100%;
-  padding: 12px;
   margin-bottom: 10px;
+  padding: 12px;
   font-size: 0.95rem;
   font-weight: 600;
   color: white;
@@ -103,13 +71,25 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.25s ease;
-  
 }
 
-@media (max-width:420px){
-  .createBlogPage{
-    padding: 1rem;
+.create-btn {
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 420px) {
+  .createBlogPage {
+    padding: 1rem 0.7rem 3rem;
   }
-  
+
+  .create-container {
+    padding: 1.5rem 1.2rem;
+  }
 }
