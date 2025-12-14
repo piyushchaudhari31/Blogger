@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@font-face {
+   font-family: regular;
+   src: url('../AeonikTRIAL-Light.otf');
+}
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: regular;
+}
+html,
+body {
+   height: 100%;
+   width: 100%;
+}
+body::-webkit-scrollbar{
+   display: none;
+}
+
+img{
+   cursor: pointer;
+}
+a{
+   text-decoration: none;
+   color: black;
+}
+

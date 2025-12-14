@@ -1,0 +1,43 @@
+.Footer{
+    
+    padding: 1rem 5rem;
+    background-color: #00000090;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Footer img{
+    width: 120px;    
+}
+.Footer .intro{
+    margin-top: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.ShareButton{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ShareButton .share{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@media (max-width:900px){
+    .Footer{
+        display: flex;
+    }
+    .Footer img{
+        display: none;
+    }
+    .Footer .share{
+        display: none;
+    }
+    .Footer p{
+        font-size: 12px;
+        font-weight: 800;
+    }
+    
+}

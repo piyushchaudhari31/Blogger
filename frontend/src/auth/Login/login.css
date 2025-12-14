@@ -1,0 +1,105 @@
+.login-container {
+  height: 100vh;
+  width: 100%;
+  background: rgb(195, 195, 195);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  background: rgb(45, 44, 44);
+  width: 380px;
+  padding: 35px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  color: #fff;
+  
+}
+
+
+.login-card h2 {
+  text-align: center;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+.subtitle {
+  text-align: center;
+  font-size: 19px;
+  opacity: 0.8;
+  margin-top: -15px;
+}
+
+
+.input-group {
+  position: relative;
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px;
+  padding-left: 45px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  color: black;
+  transition: 0.3s;
+}
+
+.input-field:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.input-label {
+  position: absolute;
+  left: 45px;
+  top: 14px;
+  font-size: 16px;
+  color: #e5e5e5;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.login-btn {
+  padding: 14px;
+  width: 100%;
+  font-size: 17px;
+  font-weight: 600;
+  background: #fff;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #e8e8e8;
+}
+
+.signup-text {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.signup-text .Link-section {
+  color: rgb(67, 67, 210);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}

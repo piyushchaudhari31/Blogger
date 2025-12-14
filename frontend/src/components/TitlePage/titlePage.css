@@ -1,0 +1,64 @@
+@font-face {
+    font-family: bold;
+    src: url('../../../AeonikTRIAL-Bold.otf');
+}
+
+.subscribePage{
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.subscribePage .information h1{
+    font-size: 2.5rem;
+    font-family: bold;
+}
+
+
+
+.subscribePage .description h3{
+    font-weight: 500;
+    opacity: 0.8;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.8rem;
+    
+}
+
+.subscribePage .Email-Subscribe{
+    display: inline-flex;
+    box-shadow: -10px 10px 0px black; 
+    margin-top: 1rem;
+    border: 1px solid black;
+}
+
+.subscribePage .Email-Subscribe input{
+    padding: 1.2rem 2rem;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 12rem;
+    border: none;
+    background: none;
+    outline: none;
+    border-right: 1px solid black;
+}
+
+.subscribePage .Email-Subscribe button{
+    padding: 1.2rem 2rem;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.subscribePage .Email-Subscribe button:active{
+    scale: 0.99;
+}
+
+
+@media (max-width:900px){
+    .subscribePage .description h3{
+        font-size: 0.9rem;
+    }
+    
+}
