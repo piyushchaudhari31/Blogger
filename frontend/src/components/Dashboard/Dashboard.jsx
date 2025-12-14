@@ -87,8 +87,18 @@ const Dashboard = () => {
                     <p>{moment(item.updatedAt).format("MMM DD, YYYY")}</p>
 
                     <div className="modification-btn">
-                      <button className="create" onClick={() => updateBlog(item._id)}>Update</button>
-                      <button className="delete" onClick={() => deleteBlog(item._id)}>Delete</button>
+                      <button
+                        className="create"
+                        onClick={() => updateBlog(item._id)}
+                      >
+                        Update
+                      </button>
+                      <button
+                        className="delete"
+                        onClick={() => deleteBlog(item._id)}
+                      >
+                        Delete
+                      </button>
                     </div>
                   </div>
                 ))}

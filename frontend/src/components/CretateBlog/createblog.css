@@ -3,8 +3,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
-  background: #f0f0f0;
   padding: 2rem;
 }
 
@@ -106,5 +104,12 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.25s ease;
+  
+}
+
+@media (max-width:420px){
+  .createBlogPage{
+    padding: 1rem;
+  }
   
 }

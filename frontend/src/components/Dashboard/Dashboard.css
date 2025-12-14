@@ -2,15 +2,17 @@
   font-family: bold;
   src: url('../../../AeonikTRIAL-Bold.otf');
 }
+
+:root {
+  --table-cols: 90px 2fr 1.2fr 1.2fr 1.4fr;
+}
+
 .dashboard {
-  display: flex;
   width: 100%;
-  min-height: 100vh;
-  background: #f3f3f3;
+  min-height: 90vh;
 }
 
 .main-area {
-  flex: 1;
   padding: 2rem 3rem;
   display: flex;
   flex-direction: column;
@@ -19,15 +21,13 @@
 
 .topbar h2 {
   font-size: 2rem;
-  font-weight: 600;
   font-family: bold;
 }
 
 .topbar p {
-  font-size: 1rem;
   color: #555;
-  margin-top: 4px;
 }
+
 
 .stats-grid {
   display: grid;
@@ -36,34 +36,19 @@
 }
 
 .stat-card {
-  background: white;
+  background: #fff;
   padding: 2rem;
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-  transition: 0.25s;
 }
-
 
 .stat-card h3 {
   font-size: 2rem;
-  color: black;
-  margin-bottom: 6px;
 }
 
 .stat-card p {
   color: #555;
-  font-size: 1rem;
-  font-weight: 500;
-}
-.Table-format{
-  margin-top: 2vh;
-  height: 45vh;
-  overflow: scroll;
-}
-
-.Table-format::-webkit-scrollbar{
-  display: none;
 }
 
 .table-box {
@@ -73,27 +58,46 @@
   box-shadow: 0 5px 25px rgba(0,0,0,0.08);
 }
 
+.table-box ::-webkit-scrollbar{
+  display: none;
+}
+
 .table-title h3 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
-.table-header {
-  margin-top: 2rem;
+.Table-format {
+  max-height: 45vh;
+  overflow: auto;
+}
+
+
+.table-header,
+.table-row {
   display: grid;
-  grid-template-columns: 0.7fr 1.62fr 1fr 1fr 0.7fr;
+  grid-template-columns: var(--table-cols);
+  align-items: center;
+  
+}
+
+.table-header {
   font-weight: bold;
-  font-size: 1.05rem;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 2px solid #eee;
   padding-bottom: 0.8rem;
+  z-index: 10;
 }
 
 .table-row {
-  display: grid;
-  grid-template-columns: 0.7fr 1.62fr 1fr 1fr 0.7fr;
   padding: 1rem 0;
   border-bottom: 1px solid #eee;
-  align-items: center;
-  transition: 0.2s;
+}
+
+.table-row:hover {
+  background: #f8f8f8;
 }
 
 .table-row img {
@@ -103,27 +107,51 @@
   object-fit: cover;
 }
 
-.table-row .Category{
+.Category {
   font-family: bold;
 }
 
-.modification-btn{
+
+.modification-btn {
   display: flex;
-  gap: 0.2rem;
+  gap: 0.5rem;
 }
-.modification-btn .create{
+
+.modification-btn button {
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 6px;
   border: none;
-  background-color: rgb(70, 70, 186);
   color: #fff;
   cursor: pointer;
+  font-size: 0.85rem;
 }
-.modification-btn .delete{
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border: none;
-  background-color: rgb(227, 52, 52);
-  color: #fff;
-  cursor: pointer;
+
+.create {
+  background: rgb(70, 70, 186);
+}
+
+.delete {
+  background: rgb(227, 52, 52);
+}
+
+@media (max-width: 900px) {
+
+  .main-area {
+    padding: 1.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  :root {
+    --table-cols: 90px 240px 140px 150px 180px;
+  }
+
+  
+
+  .table-header,
+  .table-row {
+    min-width: 800px;
+  }
 }
