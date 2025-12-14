@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from "react";
 
 
 const ContextApi = (props) => {
-    const url = "http://localhost:3000"
+    const url = "https://blogger-bavz.onrender.com"
     const [user,setUser] = useState('')
     const [isEmailVarify , setIsEmailVaify] = useState(false)
 
