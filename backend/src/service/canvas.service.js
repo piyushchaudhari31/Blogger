@@ -1,4 +1,4 @@
-const { createCanvas } = require("canvas");
+
 
 function generateInitialsAvatar(firstName, lastName) {
   const initials = `${firstName[0]}${lastName[0]}`.toUpperCase();
