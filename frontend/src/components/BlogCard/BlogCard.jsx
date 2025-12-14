@@ -78,29 +78,31 @@ const BlogCard = () => {
         </button>
       </div>
 
-      <div className="blogCard">
+       <div className="blogCard">
         {filterData.map((item, idx) => (
-          <div className='card' key={idx} onClick={()=>{BlogId(item._id)}}>
+          <div className="card" key={idx} onClick={() => BlogId(item._id)}>
 
             <div className="blog-img">
               <img src={item.image} alt="blog" />
             </div>
 
-            <div className="blog-category">
-              <h2>{item.category}</h2>
+            <div className="card-content">
+              <div className="blog-category">
+                <h2>{item.category}</h2>
+              </div>
+
+              <div className="blog-title">
+                <h1>{item.title.slice(0, 25)}...</h1>
+              </div>
+
+              <div className="blog-description markdown">
+                <ReactMarkdown>
+                  {item.description.slice(0, 180) + "..."}
+                </ReactMarkdown>
+              </div>
             </div>
 
-            <div className="blog-title">
-              <h1>{item.title.slice(0, 25)}...</h1>
-            </div>
-
-            <div className="blog-description markdown">
-              <ReactMarkdown>
-                {item.description.slice(0, 180) + '...'}
-              </ReactMarkdown>
-            </div>
-
-            <button className='Read-more'>
+            <button className="Read-more">
               <p>Read more</p>
               <img src={arrow} alt="arrow" />
             </button>
