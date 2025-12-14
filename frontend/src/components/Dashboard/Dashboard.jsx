@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./dashboard.css";
+import "./Dashboard.css";
 import { blogContext } from "../../context/ContextApi";
 import axios from "axios";
 import moment from "moment";
