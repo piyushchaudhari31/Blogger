@@ -262,7 +262,7 @@ async function resendOtp(req,res){
     const otp = String(Math.floor(Math.random() * 100000 + 900000))
     const expireOtp = Date.now() + 2 * 60 * 1000;
 
-    await transporter.sendMail({
+    transporter.sendMail({
     from:"Blog App <mrpiyushchaudhari2006@gmail.com>",
     to: user.email,
     subject: "Your OTP Code 🔐 | Blog Application",
