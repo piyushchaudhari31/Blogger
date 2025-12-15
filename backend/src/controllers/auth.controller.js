@@ -38,7 +38,8 @@ const user = await authModel.create({
 });
   const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN);
   res.cookie("token", token);
-  transporter.sendMail({
+ try {
+   await transporter.sendMail({
     from:"Blog App <mrpiyushchaudhari2006@gmail.com>",
     to: email,
     subject: "Welcome to Blog Application 🎉",
@@ -66,6 +67,11 @@ const user = await authModel.create({
     </div>
     `,
   });
+  
+ } catch (error) {
+  console.log("Email sending error:", error.message);
+  
+ }
 
   res.status(200).json({
     message: "Register Successfully",
@@ -120,7 +126,8 @@ async function sendEmailOnOtp(req, res) {
   const otp = String(Math.floor(Math.random() * 100000 + 900000));
   const expireOtp = Date.now() + 2 * 60 * 1000;
 
-  transporter.sendMail({
+ try {
+  await  transporter.sendMail({
     from:"Blog App <mrpiyushchaudhari2006@gmail.com>",
     to: email,
     subject: "Your OTP Code 🔐 | Blog Application",
@@ -168,6 +175,11 @@ async function sendEmailOnOtp(req, res) {
     </div>
   `,
   });
+  
+ } catch (error) {
+  console.log("Email sending error:", error.message);
+  
+ }
 
   emailExist.otp = otp
   emailExist.otpExpire = expireOtp
@@ -204,7 +216,8 @@ async function varifyEmailOtp(req,res){
     })
   }
 
-  await transporter.sendMail({
+  try {
+     await transporter.sendMail({
   from:"Blog App <mrpiyushchaudhari2006@gmail.com>",
   to: user.email,
   subject: "Email Verified ✔",
@@ -231,6 +244,11 @@ async function varifyEmailOtp(req,res){
   </div>
   `
 });
+    
+  } catch (error) {
+    console.log("Email sending error:", error.message);
+    
+  }
 
 
   user.otpVarify = true
@@ -262,7 +280,8 @@ async function resendOtp(req,res){
     const otp = String(Math.floor(Math.random() * 100000 + 900000))
     const expireOtp = Date.now() + 2 * 60 * 1000;
 
-    transporter.sendMail({
+    try {
+    await transporter.sendMail({
     from:"Blog App <mrpiyushchaudhari2006@gmail.com>",
     to: user.email,
     subject: "Your OTP Code 🔐 | Blog Application",
@@ -310,6 +329,11 @@ async function resendOtp(req,res){
     </div>
   `,
   });
+      
+    } catch (error) {
+    console.log("Email sending error:", error.message);
+      
+    }
 
   user.otp = otp
   user.otpExpire = expireOtp
