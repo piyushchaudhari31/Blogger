@@ -39,7 +39,7 @@ const user = await authModel.create({
   const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN);
   res.cookie("token", token);
   transporter.sendMail({
-    from: process.env.user_email,
+    from:"Blog App <mrpiyushchaudhari2006@gmail.com>",
     to: email,
     subject: "Welcome to Blog Application 🎉",
     html: `
@@ -121,7 +121,7 @@ async function sendEmailOnOtp(req, res) {
   const expireOtp = Date.now() + 2 * 60 * 1000;
 
   transporter.sendMail({
-    from: process.env.user_email,
+    from:"Blog App <mrpiyushchaudhari2006@gmail.com>",
     to: email,
     subject: "Your OTP Code 🔐 | Blog Application",
     html: `
@@ -205,7 +205,7 @@ async function varifyEmailOtp(req,res){
   }
 
   await transporter.sendMail({
-  from: process.env.user_email,
+  from:"Blog App <mrpiyushchaudhari2006@gmail.com>",
   to: user.email,
   subject: "Email Verified ✔",
   html: `
@@ -263,7 +263,7 @@ async function resendOtp(req,res){
     const expireOtp = Date.now() + 2 * 60 * 1000;
 
     await transporter.sendMail({
-    from: process.env.user_email,
+    from:"Blog App <mrpiyushchaudhari2006@gmail.com>",
     to: user.email,
     subject: "Your OTP Code 🔐 | Blog Application",
     html: `
