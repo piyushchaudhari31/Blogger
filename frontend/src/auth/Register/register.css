@@ -129,7 +129,7 @@
 .gender-options input[type="radio"] {
   width: 18px;
   height: 18px;
-  accent-color: #ffffff; /* White radio circle */
+  accent-color: rgb(29, 29, 177); 
   cursor: pointer;
 }
 
