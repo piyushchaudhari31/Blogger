@@ -11,7 +11,7 @@ export default defineConfig({
     VitePWA({
       manifest: {
         name: "Blooger",
-        short_name: "blog",
+        short_name: "Blog",
         description: "welcome to our blog channel",
         theme_color: "#777C6D",
         icons: [
