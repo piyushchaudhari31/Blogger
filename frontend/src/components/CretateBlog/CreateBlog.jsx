@@ -7,9 +7,11 @@ import toast from "react-hot-toast";
 import Navbar from "../Navbar/Navbar";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { useNavigate } from "react-router-dom";
 
 const CreateBlog = () => {
   const { url } = useContext(blogContext);
+  const navigate = useNavigate()
 
   const [description, setDescription] = useState("");
   const [aiLoading, setAiLoading] = useState(false);
@@ -42,6 +44,7 @@ const CreateBlog = () => {
         success: (res) => {
           reset();
           setDescription("");
+          navigate('/')
           return res.data.message;
         },
         error: (err) =>
