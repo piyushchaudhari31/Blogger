@@ -38,7 +38,7 @@ const user = await authModel.create({
 });
   const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN);
   res.cookie("token", token);
-  transporter.sendMail({
+  await transporter.sendMail({
     from: process.env.user_email,
     to: email,
     subject: "Welcome to Blog Application 🎉",
@@ -120,7 +120,7 @@ async function sendEmailOnOtp(req, res) {
   const otp = String(Math.floor(Math.random() * 100000 + 900000));
   const expireOtp = Date.now() + 2 * 60 * 1000;
 
-  transporter.sendMail({
+  await transporter.sendMail({
     from: process.env.user_email,
     to: email,
     subject: "Your OTP Code 🔐 | Blog Application",
