@@ -72,12 +72,12 @@ const Register = () => {
 
           <div className="gender-options">
             <label>
-              <input type="radio" value="male" {...register("male")} required />
+              <input type="radio" value="male" {...register("gender")} required />
               Male
             </label>
 
             <label>
-              <input type="radio" value="female" {...register("female")} />
+              <input type="radio" value="female" {...register("gender")} />
               Female
             </label>
           </div>
