@@ -39,6 +39,34 @@ const user = await authModel.create({
   const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN);
   res.cookie("token", token);
   
+  await transporter.sendMail({
+    from:'"Blogger " <mrpiyushchaudhari2006@gmail.com>',
+    to: email,
+    subject: "Welcome to Blog Application 🎉",
+    html: `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin:auto; padding:20px; background:#f4f4f4; border-radius:10px;">
+      <div style="background:#4A90E2; padding:20px; border-radius:10px; text-align:center; color:white;">
+          <h1>Welcome to Blog Application 🎉</h1>
+      </div>
+
+      <div style="padding:20px; background:white; margin-top:10px; border-radius:10px;">
+          <p>Hi <strong>${firstName}</strong>,</p>
+
+          <p>Thank you for joining our blogging community!</p>
+          <p>Your account has been successfully registered with the email:</p>
+
+          <p style="background:#f0f0f0; padding:10px; border-radius:5px;">📩 ${email}</p>
+
+          <p>Start writing, reading, and exploring content created by awesome people like you.</p>
+
+          <p style="margin-top:20px;">If this wasn’t you, please ignore this email.</p>
+
+          <p>Happy Blogging! ✨</p>
+          <p><strong>— Team Piyush-Developer</strong></p>
+      </div>
+    </div>
+    `,
+  });
 
   res.status(200).json({
     message: "Register Successfully",
@@ -94,7 +122,7 @@ async function sendEmailOnOtp(req, res) {
   const expireOtp = Date.now() + 2 * 60 * 1000;
 
   await transporter.sendMail({
-    from: process.env.user_email,
+    from:'"Blogger " <mrpiyushchaudhari2006@gmail.com>',
     to: email,
     subject: "Your OTP Code 🔐 | Blog Application",
     html: `
@@ -178,7 +206,7 @@ async function varifyEmailOtp(req,res){
   }
 
   await transporter.sendMail({
-  from: process.env.user_email,
+  from: '"Blogger " <mrpiyushchaudhari2006@gmail.com>',
   to: user.email,
   subject: "Email Verified ✔",
   html: `
@@ -236,7 +264,7 @@ async function resendOtp(req,res){
     const expireOtp = Date.now() + 2 * 60 * 1000;
 
     await transporter.sendMail({
-    from: process.env.user_email,
+    from: '"Blogger " <mrpiyushchaudhari2006@gmail.com>',
     to: user.email,
     subject: "Your OTP Code 🔐 | Blog Application",
     html: `
