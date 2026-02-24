@@ -19,7 +19,7 @@ const Register = () => {
     const finalData = {
       ...data,
       fullName: `${data.firstName} ${data.lastName}`,
-      gender: data.gender   // ⬅ added gender here
+      gender: data.gender  
     };
 
     try {
